@@ -1,0 +1,7 @@
+[core]
+	editor = vim -c \"set fenc=utf-8\"
+[user]
+	name = kazami
+	email = kazamidoly@gmail.com
+[color]
+	ui = auto
