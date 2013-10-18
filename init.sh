@@ -13,11 +13,11 @@ init()
     mkdir -pv ${HOME}/.vim/
     mkdir -pv ${HOME}/.vnc/
 
-    ln -svn ${HOME}/.dotfiles/.tmux.conf ${HOME}/.tmux.conf
-    ln -svn ${HOME}/.dotfiles/.gitconfig ${HOME}/.gitconfig
-    ln -svn ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
-    ln -svn ${HOME}/.dotfiles/.vim/colors/ ${HOME}/.vim/colors
-    ln -svn ${HOME}/.dotfiles/.vnc/xstartup ${HOME}/.vnc/xstartup
+    ln -sv ${HOME}/.dotfiles/.tmux.conf ${HOME}/.tmux.conf
+    ln -sv ${HOME}/.dotfiles/.gitconfig ${HOME}/.gitconfig
+    ln -sv ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
+    ln -sv ${HOME}/.dotfiles/.vim/colors ${HOME}/.vim/
+    ln -sv ${HOME}/.dotfiles/.vnc/xstartup ${HOME}/.vnc/xstartup
 }
 
 force_init()
@@ -25,10 +25,12 @@ force_init()
     mkdir -pv ${HOME}/.vim/
     mkdir -pv ${HOME}/.vnc/
 
+    rm -rf ${HOME}/.vim/colors
+
     ln -svnf ${HOME}/.dotfiles/.tmux.conf ${HOME}/.tmux.conf
     ln -svnf ${HOME}/.dotfiles/.gitconfig ${HOME}/.gitconfig
     ln -svnf ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
-    ln -svnf ${HOME}/.dotfiles/.vim/colors/ ${HOME}/.vim/colors
+    ln -svnf ${HOME}/.dotfiles/.vim/colors ${HOME}/.vim/
     ln -svnf ${HOME}/.dotfiles/.vnc/xstartup ${HOME}/.vnc/xstartup
 }
 
