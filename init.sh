@@ -1,7 +1,6 @@
 #! /bin/bash
 
 mkdir -pv ${HOME}/.vim/
-mkdir -pv ${HOME}/.vim/colors/
 mkdir -pv ${HOME}/.vnc/
 
 ln -sv ${HOME}/.dotfiles/.tmux.conf ${HOME}/.tmux.conf

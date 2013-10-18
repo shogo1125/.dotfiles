@@ -75,3 +75,5 @@ set wildmode=longest:full,full
 set wildmenu
 let g:molokai_original = 1
 set hlsearch
+set clipboard=unnamedplus
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
