@@ -12,6 +12,7 @@ init()
 {
     mkdir -pv ${HOME}/.vim/
     mkdir -pv ${HOME}/.vnc/
+    mkdir -pv ${HOME}/.fonts/
     mkdir -pv ${HOME}/.tmux-powerline/
     mkdir -pv ${HOME}/.powerline-fonts/
 
@@ -33,11 +34,13 @@ force_init()
 {
     rm -rf ${HOME}/.vim
     rm -rf ${HOME}/.vnc
+    rm -rf ${HOME}/.fonts/
     rm -rf ${HOME}/.tmux-powerline
     rm -rf ${HOME}/.powerline-fonts/
     
     mkdir -pv ${HOME}/.vim/
     mkdir -pv ${HOME}/.vnc/
+    mkdir -pv ${HOME}/.fonts/
     mkdir -pv ${HOME}/.tmux-powerline/
     mkdir -pv ${HOME}/.powerline-fonts/
 
