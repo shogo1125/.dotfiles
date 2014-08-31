@@ -4,13 +4,12 @@ print_help()
 {
     echo "なし : うわがきしない"
     echo "-f   : ぜんぶうわがき"
-    echo "help : ヘルプ"
+    echo "-h : ヘルプ"
     exit 0
 }
 
 init()
 {
-    mkdir -pv ${HOME}/.vim/
     mkdir -pv ${HOME}/.vnc/
     mkdir -pv ${HOME}/.fonts/
     mkdir -pv ${HOME}/.tmux-powerline/
@@ -19,7 +18,7 @@ init()
     ln -sv ${HOME}/.dotfiles/.tmux.conf ${HOME}/.tmux.conf
     ln -sv ${HOME}/.dotfiles/.gitconfig ${HOME}/.gitconfig
     ln -sv ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
-    ln -sv ${HOME}/.dotfiles/.vim/colors ${HOME}/.vim/
+    ln -sv ${HOME}/.dotfiles/.vim ${HOME}/.vim
     ln -sv ${HOME}/.dotfiles/.vnc/xstartup ${HOME}/.vnc/xstartup
     ln -sv ${HOME}/.dotfiles/.tmux-powerlinerc ${HOME}/.tmux-powerlinerc
     ln -sv ${HOME}/.dotfiles/.tmux-powerlinetheme.sh ${HOME}/.tmux-powerlinetheme.sh
@@ -38,7 +37,6 @@ force_init()
     rm -rf ${HOME}/.tmux-powerline
     rm -rf ${HOME}/.powerline-fonts/
     
-    mkdir -pv ${HOME}/.vim/
     mkdir -pv ${HOME}/.vnc/
     mkdir -pv ${HOME}/.fonts/
     mkdir -pv ${HOME}/.tmux-powerline/
@@ -47,7 +45,7 @@ force_init()
     ln -svnf ${HOME}/.dotfiles/.tmux.conf ${HOME}/.tmux.conf
     ln -svnf ${HOME}/.dotfiles/.gitconfig ${HOME}/.gitconfig
     ln -svnf ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc
-    ln -svnf ${HOME}/.dotfiles/.vim/colors ${HOME}/.vim/
+    ln -svnf ${HOME}/.dotfiles/.vim ${HOME}/.vim
     ln -svnf ${HOME}/.dotfiles/.vnc/xstartup ${HOME}/.vnc/xstartup
     ln -svnf ${HOME}/.dotfiles/.tmux-powerlinerc ${HOME}/.tmux-powerlinerc
     ln -svnf ${HOME}/.dotfiles/.tmux-powerlinetheme.sh ${HOME}/.tmux-powerlinetheme.sh
@@ -65,6 +63,6 @@ fi
 case $1 in
   "-f" )
     force_init;;
-  "help" )
+  "-h" )
     print_help;;
 esac
