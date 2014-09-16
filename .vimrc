@@ -78,6 +78,7 @@ set hlsearch
 set clipboard=unnamedplus
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 set backspace=indent,eol,start
+set list
 
 au BufNewFile,BufRead *.html set nowrap tabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.sh set nowrap tabstop=2 shiftwidth=2
