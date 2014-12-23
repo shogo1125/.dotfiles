@@ -77,10 +77,11 @@ command! ReloadVimrc source $MYVIMRC
 
 " colorscheme
 set t_Co=256
-colorscheme molokai_custom
+colorscheme molokai
 let g:molokai_original = 1
 
-
+filetype plugin indent on
+syntax on
 "---------------------------
 " Start Neobundle Settings.
 "---------------------------
@@ -97,11 +98,11 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 "----- plugins -----
 NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'tomasr/molokai'
 
 call neobundle#end()
 
 filetype plugin indent on
+syntax on
 "-------------------------
 " End Neobundle Settings.
 "-------------------------
