@@ -98,13 +98,16 @@ main(){
 
   #make directories
   mkdir -pv ${HOME}/.vim/
+  mkdir -pv ${HOME}/.vim/bundle/
   mkdir -pv ${HOME}/.vnc/
   mkdir -pv ${HOME}/.tmux-powerline/
 
   create_symlink ${DOTFILES_ROOT}/tmux.conf ${HOME}/.tmux.conf
   create_symlink ${DOTFILES_ROOT}/gitconfig ${HOME}/.gitconfig
   create_symlink ${DOTFILES_ROOT}/vimrc ${HOME}/.vimrc
-  create_symlink ${DOTFILES_ROOT}/vim ${HOME}/.vim
+  create_symlink ${DOTFILES_ROOT}/vim/colors ${HOME}/.vim/colors
+  create_symlink ${DOTFILES_ROOT}/vim/ftdetect ${HOME}/.vim/ftdetect
+  create_symlink ${DOTFILES_ROOT}/vim/syntax ${HOME}/.vim/syntax
   create_symlink ${DOTFILES_ROOT}/vnc/xstartup ${HOME}/.vnc/xstartup
   create_symlink ${DOTFILES_ROOT}/tmux-powerlinerc ${HOME}/.tmux-powerlinerc
   create_symlink ${DOTFILES_ROOT}/tmux-powerlinetheme.sh ${HOME}/.tmux-powerlinetheme.sh
@@ -115,6 +118,13 @@ main(){
   else
     git clone git://github.com/erikw/tmux-powerline ${HOME}/.tmux-powerline
   fi
+
+  if [ -d ${HOME}/.vim/bundle/neobundle.vim/ ]; then
+    echo "neobundle exists."
+  else
+    git clone git://github.com/Shougo/neobundle.vim ${HOME}/.vim/bundle/neobundle.vim
+  fi
+
 }
 
 main
