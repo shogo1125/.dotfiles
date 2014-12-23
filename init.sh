@@ -22,7 +22,8 @@ DOTFILES_ROOT=$(pwd)
 # check platform
 PLATFORM=$(uname -s)
 
-link_file(){
+# create symbolic link
+create_symlink(){
   local src=$1 dst=$2
   local overwrite= backup= skip=
   local action=
@@ -42,9 +43,9 @@ link_file(){
         skip=true;
 
       else
-        echo "File already exists: ${dst} ($(basename "${src}")), what do you want to do?"
+        echo "Already exists: ${dst} ($(basename "${src}")), what do you want to do?"
         echo "[s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
-        read -n 1 action
+        read  action
 
         case "${action}" in
           o )
@@ -92,23 +93,23 @@ link_file(){
 
 }
 
-create_symlinks(){
+main(){
   local overwrite_all=false backup_all=false skip_all=false
 
+  #make directories
   mkdir -pv ${HOME}/.vim/
   mkdir -pv ${HOME}/.vnc/
-
-  link_file ${DOTFILES_ROOT}/tmux.conf ${HOME}/.tmux.conf
-  link_file ${DOTFILES_ROOT}/gitconfig ${HOME}/.gitconfig
-  link_file ${DOTFILES_ROOT}/vimrc ${HOME}/.vimrc
-  link_file ${DOTFILES_ROOT}/vim ${HOME}/.vim
-  link_file ${DOTFILES_ROOT}/vnc/xstartup ${HOME}/.vnc/xstartup
-  link_file ${DOTFILES_ROOT}/tmux-powerlinerc ${HOME}/.tmux-powerlinerc
-  link_file ${DOTFILES_ROOT}/tmux-powerlinetheme.sh ${HOME}/.tmux-powerlinetheme.sh
-}
-
-clone_git_repositories(){
   mkdir -pv ${HOME}/.tmux-powerline/
+
+  create_symlink ${DOTFILES_ROOT}/tmux.conf ${HOME}/.tmux.conf
+  create_symlink ${DOTFILES_ROOT}/gitconfig ${HOME}/.gitconfig
+  create_symlink ${DOTFILES_ROOT}/vimrc ${HOME}/.vimrc
+  create_symlink ${DOTFILES_ROOT}/vim ${HOME}/.vim
+  create_symlink ${DOTFILES_ROOT}/vnc/xstartup ${HOME}/.vnc/xstartup
+  create_symlink ${DOTFILES_ROOT}/tmux-powerlinerc ${HOME}/.tmux-powerlinerc
+  create_symlink ${DOTFILES_ROOT}/tmux-powerlinetheme.sh ${HOME}/.tmux-powerlinetheme.sh
+
+  # clone git repositories
   if [ -f ${HOME}/.tmux-powerline/powerline.sh ]; then
     echo "tmux-powerline exists."
   else
@@ -116,8 +117,7 @@ clone_git_repositories(){
   fi
 }
 
-create_symlinks
-clone_git_repositories
+main
 
 echo ''
 echo 'Finished.'
