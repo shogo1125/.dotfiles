@@ -107,6 +107,7 @@ main(){
   create_symlink ${DOTFILES_ROOT}/vim/colors ${HOME}/.vim/colors
   create_symlink ${DOTFILES_ROOT}/vim/ftdetect ${HOME}/.vim/ftdetect
   create_symlink ${DOTFILES_ROOT}/vim/syntax ${HOME}/.vim/syntax
+  create_symlink ${DOTFILES_ROOT}/vim/skel ${HOME}/.vim/skel
   create_symlink ${DOTFILES_ROOT}/tmux-powerlinerc ${HOME}/.tmux-powerlinerc
   create_symlink ${DOTFILES_ROOT}/tmux-powerlinetheme.sh ${HOME}/.tmux-powerlinetheme.sh
 
