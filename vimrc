@@ -66,7 +66,7 @@ set wildmode=longest,full
 set history=1000
 
 " clipboard
-set clipboard=unnamedpluS
+set clipboard=unnamedplus
 
 " mouse
 set mouse=
