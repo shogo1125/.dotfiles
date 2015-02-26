@@ -66,7 +66,7 @@ set wildmode=longest,full
 set history=1000
 
 " clipboard
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 " mouse
 set mouse=
@@ -88,8 +88,12 @@ augroup END
 
 " colorscheme
 set t_Co=256
-colorscheme molokai
+colorscheme molokai_kzm
+if has('gui_macvim')
+  colorscheme molokai
+end
 let g:molokai_original = 1
+
 
 filetype plugin indent on
 syntax on
