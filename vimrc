@@ -1,8 +1,7 @@
 "----------------------------------
-" .vimrc (written by kazami)
-" last update: 2014/12/24
+" .vimrc (written by shogo)
+" last update: 2015/02/28
 "----------------------------------
-
 scriptencoding utf-8
 
 set nocompatible
@@ -13,6 +12,7 @@ set fileencoding=utf-8
 set number
 set ruler
 set cursorline
+highlight CurosrLine cterm=underline ctermfg=NONE ctermbg=NONE
 "set cursorcolumn
 set laststatus=2
 set cmdheight=2
@@ -35,6 +35,7 @@ set hidden
 set autoread
 set nobackup
 set noswapfile
+set noundofile
 
 " search/replace
 set hlsearch
@@ -89,9 +90,6 @@ augroup END
 " colorscheme
 set t_Co=256
 colorscheme molokai_kzm
-if has('gui_macvim')
-  colorscheme molokai
-end
 let g:molokai_original = 1
 
 
@@ -167,4 +165,3 @@ syntax on
 "-------------------------
 " End Neobundle Settings.
 "-------------------------
-
