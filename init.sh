@@ -1,7 +1,7 @@
 #! /bin/bash
 ###############################
-# init.sh (written by kazami)
-# last update: 2014/12/24
+# init.sh (written by shogo)
+# last update: 2015/02/28
 ###############################
 
 set -e

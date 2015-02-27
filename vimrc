@@ -151,9 +151,10 @@ if has('conceal')
 endif
 
 " indentLine
-let g:indentLine_color_term = 59
-let g:indentLine_color_gui = '#7E8E91'
+let g:indentLine_color_term =111 
+let g:indentLine_color_gui = '#708090'
 let g:indentLine_char = '|'
+set list listchars=tab:\¦\
 
 " NERDTree
 nmap <silent> <C-e> :NERDTreeToggle<CR>
