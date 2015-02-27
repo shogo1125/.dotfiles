@@ -1,0 +1,12 @@
+[core]
+	editor = vim -c \"set fenc=utf-8\"
+[user]
+	name = shogo
+	email = s.s.jam14@gmail.com
+[color]
+	ui = true
+[alias]
+	st = status
+	ch = checkout
+	br = branch
+	co = commit
