@@ -1,8 +1,7 @@
 "----------------------------------
-" .vimrc (written by kazami)
-" last update: 2014/12/24
+" .vimrc (written by shogo)
+" last update: 2015/02/28
 "----------------------------------
-
 scriptencoding utf-8
 
 set nocompatible
@@ -13,6 +12,7 @@ set fileencoding=utf-8
 set number
 set ruler
 set cursorline
+highlight CurosrLine cterm=underline ctermfg=NONE ctermbg=None
 "set cursorcolumn
 set laststatus=2
 set cmdheight=2
@@ -35,6 +35,7 @@ set hidden
 set autoread
 set nobackup
 set noswapfile
+set noundofile
 
 " search/replace
 set hlsearch
@@ -66,7 +67,7 @@ set wildmode=longest,full
 set history=1000
 
 " clipboard
-"set clipboard=unnamedplus
+set clipboard=unnamedplus
 
 " mouse
 set mouse=
@@ -89,9 +90,6 @@ augroup END
 " colorscheme
 set t_Co=256
 colorscheme molokai_kzm
-if has('gui_macvim')
-  colorscheme molokai
-end
 let g:molokai_original = 1
 
 
@@ -120,6 +118,8 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'bronson/vim-trailing-whitespace'
 
 call neobundle#end()
 
@@ -167,4 +167,3 @@ syntax on
 "-------------------------
 " End Neobundle Settings.
 "-------------------------
-
