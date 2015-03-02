@@ -12,7 +12,7 @@ set fileencoding=utf-8
 set number
 set ruler
 set cursorline
-highlight CurosrLine cterm=underline ctermfg=NONE ctermbg=NONE
+highlight CurosrLine cterm=underline ctermfg=NONE ctermbg=None
 "set cursorcolumn
 set laststatus=2
 set cmdheight=2
@@ -67,7 +67,7 @@ set wildmode=longest,full
 set history=1000
 
 " clipboard
-"set clipboard=unnamedplus
+set clipboard=unnamedplus
 
 " mouse
 set mouse=
