@@ -11,14 +11,14 @@ set fileencoding=utf-8
 " display
 set number
 set ruler
-set cursorline
-highlight CurosrLine cterm=underline ctermfg=NONE ctermbg=None
+"set cursorline
+"highlight CurosrLine cterm=underline ctermfg=NONE ctermbg=None
 "set cursorcolumn
 set laststatus=2
 set cmdheight=2
 set showmatch
 set list
-set listchars=tab:>.
+set listchars=tab:»-,trail:-,nbsp:%,eol:↲,space:>
 set ambiwidth=double
 
 " cursor
@@ -67,7 +67,8 @@ set wildmode=longest,full
 set history=1000
 
 " clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed
+"set clipboard=unnamedplus
 
 " mouse
 set mouse=
@@ -87,14 +88,16 @@ augroup MySkeletonCmd
   autocmd BufNewFile *.html 0r ~/.vim/skel/skeleton.html
 augroup END
 
-" colorscheme
-set t_Co=256
-colorscheme molokai_kzm
-let g:molokai_original = 1
-
 
 filetype plugin indent on
 syntax on
+
+" colorscheme
+set t_Co=256
+colorscheme hybrid
+let g:hybrid_use_iTerm_colors = 1
+"colorscheme molokai_kzm
+"let g:molokai_original = 1
 
 
 "---------------------------
@@ -117,7 +120,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Yggdroot/indentLine'
-NeoBundle 'scrooloose/nerdtree'
+"NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
 
@@ -167,3 +170,6 @@ syntax on
 "-------------------------
 " End Neobundle Settings.
 "-------------------------
+
+
+
